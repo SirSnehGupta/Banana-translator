@@ -10,7 +10,7 @@ function errorHandle(error){
     alert('Oops! Server Probs :(\nTry again after some time.')
 }
 function clickEventHandler(){
-    fetch(urlConst(input.value)).then(Response => Response.json()).then(json => console.log(json.contents.translated)).catch(errorHandle)
+    fetch(urlConst(input.value)).then(Response => Response.json()).then(json => output.innerText = (json.contents.translated)).catch(errorHandle)
     
 }
 click.addEventListener('click', clickEventHandler);
